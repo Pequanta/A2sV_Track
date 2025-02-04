@@ -1,0 +1,16 @@
+# Problem: Length of Last Word - https://leetcode.com/problems/length-of-last-word/description/
+
+class Solution {
+    public int lengthOfLastWord(String s) {
+        s = s.trim();
+        int pos = 0;
+        boolean space_found = false;
+        for(int i = 0; i < s.length();i++){
+            if(s.charAt(i) == ' '){
+                pos = i;
+                space_found = true;
+            }
+        }
+        return space_found ? s.length() - 1 - pos : s.length();
+    }
+}
